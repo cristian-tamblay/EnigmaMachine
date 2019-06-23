@@ -3,17 +3,17 @@ import random
 
 class Plugboard:
     def __init__(self):
-        self.permutation = [0]*27
-        letters = list(range(1, 27)) # 26 letras
-        for i in range(1,27):
-            if self.permutation[i] == 0:
+        self.permutation = [-1] * 26
+        letters = list(range(0, 26))  # 26 letras
+        for i in range(0, 26):
+            if self.permutation[i] == -1:
                 keepLetter = random.random()
                 if keepLetter < 0.05 and i in letters:
                     self.permutation[i] = i
                     letters.remove(i)
                 else:
                     if len(letters) > 1:
-                        letter = random.randint(1, len(letters)-1)
+                        letter = random.randint(1, len(letters) - 1)
                     else:
                         letter = 0
                     self.permutation[i] = letters[letter]

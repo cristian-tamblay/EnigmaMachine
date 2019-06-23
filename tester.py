@@ -1,13 +1,9 @@
-from Plugboard import Plugboard
+from EnigmaController import EnigmaController
 import random
+
 random.seed(1000)
 
-plug = Plugboard()
-print(plug.cipher(2))
-
-text='FVPJIAOYEDRZXWGCTKUQSBNMHL'.lower()
-perm = []
-for char in text:
-    perm.append(ord(char) - 96)
-
-print(perm)
+rotor = EnigmaController(['I', 'II', 'III'], ['A', 'A', 'Z'],'b')
+print(chr(rotor.cipher(0)+97))
+print(chr(rotor.cipher(1)+97))
+print(chr(rotor.cipher(2)+97))
