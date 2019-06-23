@@ -41,3 +41,6 @@ class Rotor:
 
     def isNotch(self):
         return self.chosenNotch == self.keyValue
+
+    def getKey(self):
+        return chr(self.keyValue+97).upper()

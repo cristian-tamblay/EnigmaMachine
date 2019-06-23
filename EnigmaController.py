@@ -33,3 +33,6 @@ class EnigmaController:
         cipherMiddle = self.middle.cipherRight(cipherLeft)
         cipherRight = self.right.cipherRight(cipherMiddle)
         return cipherRight
+
+    def getKey(self):
+        return [self.left.getKey(), self.middle.getKey(), self.right.getKey()]
