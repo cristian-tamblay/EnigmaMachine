@@ -17,7 +17,6 @@ class Plugboard:
                     self.permutation[letters[letter]] = i
                     letters.remove(letters[letter])
                     letters.remove(i)
-        print(self.permutation)
 
     def cipher(self, plainLetter):
         return self.permutation[plainLetter]
