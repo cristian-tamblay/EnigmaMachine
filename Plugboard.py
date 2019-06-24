@@ -8,18 +8,16 @@ class Plugboard:
         for i in range(0, 26):
             if self.permutation[i] == -1:
                 keepLetter = random.random()
-                if keepLetter < 0.05 and i in letters:
+                if (keepLetter < 0.05 and i in letters) or len(letters) == 1:
                     self.permutation[i] = i
                     letters.remove(i)
                 else:
-                    if len(letters) > 1:
-                        letter = random.randint(1, len(letters) - 1)
-                    else:
-                        letter = 0
+                    letter = random.randint(1, len(letters) - 1)
                     self.permutation[i] = letters[letter]
                     self.permutation[letters[letter]] = i
                     letters.remove(letters[letter])
                     letters.remove(i)
+        print(self.permutation)
 
     def cipher(self, plainLetter):
         return self.permutation[plainLetter]
