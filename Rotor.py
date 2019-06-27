@@ -27,6 +27,8 @@ class Rotor:
 
         self.keyValue = ord(key.lower()) - 97
 
+        self.rotorId = rotorId
+
         self.key = [(x + self.keyValue) % 26 for x in list(range(0, 26))]
 
     def cipherLeft(self, plainText):
@@ -44,3 +46,6 @@ class Rotor:
 
     def getKey(self):
         return chr(self.keyValue+97).upper()
+
+    def getRotor(self):
+        return self.rotorId
