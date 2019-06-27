@@ -12,6 +12,8 @@ class EnigmaController:
         self.middle = Rotor(rotors[1], keys[1])
         self.right = Rotor(rotors[2], keys[2])
         self.reflector = Reflector(reflector)
+        self.rotors = rotors
+        self.initialKeys = keys
 
     def cipher(self, plainLetter):
         # Movimientos en notch/al iniciar cifrado
@@ -36,3 +38,14 @@ class EnigmaController:
 
     def getKey(self):
         return [self.left.getKey(), self.middle.getKey(), self.right.getKey()]
+
+    def setRotorsAndKeys(self, rotors,keys):
+        self.left = Rotor(rotors[0], keys[0])
+        self.middle = Rotor(rotors[1], keys[1])
+        self.right = Rotor(rotors[2], keys[2])
+
+    def setKeys(self, keys):
+        self.setRotorsAndKeys(self.rotors, keys)
+
+    def resetKeys(self):
+        self.setKeys(self.initialKeys)
