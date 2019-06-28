@@ -24,9 +24,9 @@ class EnigmaController:
             if not self.middle.isNotch():
                 self.middle.step()
         self.right.step()
-        # cipherPlug = self.plug.cipher(plainLetter)
-        # cipherStatic = self.static.cipher(cipherPlug)
-        cipherStatic = self.static.cipher(plainLetter)
+        # Si se quiere usar el plugboard descomentar las siguientes lineas
+        cipherPlug = self.plug.cipher(plainLetter)
+        cipherStatic = self.static.cipher(cipherPlug)
         cipherRightRotor = self.right.cipherLeft(cipherStatic)
         cipherMiddle = self.middle.cipherLeft(cipherRightRotor)
         cipherLeft = self.left.cipherLeft(cipherMiddle)
