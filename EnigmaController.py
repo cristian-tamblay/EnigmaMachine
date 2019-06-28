@@ -46,6 +46,7 @@ class EnigmaController:
         self.left = Rotor(rotors[0], keys[0])
         self.middle = Rotor(rotors[1], keys[1])
         self.right = Rotor(rotors[2], keys[2])
+        self.initialKeys = keys
 
     def setKeys(self, keys):
         self.setRotorsAndKeys(self.rotors, keys)
